@@ -9,7 +9,17 @@
 // ==/UserScript==
 
 (function() {
-   'use strict';
+  'use strict';
 
-   window.location.href = "https://imgflip.com/m/fun";
+  window.location.href = "https://imgflip.com/m/fun";
+  // Select all anchor elements on the page
+  var anchors = document.getElementsByTagName("a");
+
+  // Loop through each anchor element
+  for (var i = 0; i < anchors.length; i++) {
+      // If the href attribute is "/", change it to "/m/fun"
+      if (anchors[i].getAttribute('href') === "/") {
+          anchors[i].setAttribute('href', "/m/fun");
+      }
+  }
 })();
